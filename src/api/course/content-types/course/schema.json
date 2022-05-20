@@ -40,6 +40,12 @@
     },
     "course_discription": {
       "type": "richtext"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "course"
     }
   }
 }
