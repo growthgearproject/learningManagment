@@ -49,6 +49,12 @@
       "relation": "manyToOne",
       "target": "api::course.course",
       "inversedBy": "topics"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource.resource",
+      "mappedBy": "topic"
     }
   }
 }

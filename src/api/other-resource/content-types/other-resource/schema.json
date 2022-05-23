@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "other_resources",
+  "info": {
+    "singularName": "other-resource",
+    "pluralName": "other-resources",
+    "displayName": "other_resource"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "discription": {
+      "type": "text"
+    },
+    "otherResource": {
+      "type": "richtext",
+      "required": true
+    },
+    "resource": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource.resource",
+      "inversedBy": "other_resources"
+    }
+  }
+}

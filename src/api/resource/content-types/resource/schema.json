@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resources",
+  "info": {
+    "singularName": "resource",
+    "pluralName": "resources",
+    "displayName": "Resource",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "resource_name": {
+      "type": "string",
+      "required": true
+    },
+    "time_of_completion_weeks": {
+      "type": "integer",
+      "required": true
+    },
+    "level_of_difficulty": {
+      "type": "enumeration",
+      "enum": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ],
+      "required": true,
+      "default": "Easy"
+    },
+    "resource_discription": {
+      "type": "richtext"
+    },
+    "topic": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::topic.topic",
+      "inversedBy": "resources"
+    },
+    "urls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::url.url",
+      "mappedBy": "resource"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video",
+      "mappedBy": "resource"
+    },
+    "rich_resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rich-resource.rich-resource",
+      "mappedBy": "resource"
+    },
+    "other_resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::other-resource.other-resource",
+      "mappedBy": "resource"
+    }
+  }
+}
