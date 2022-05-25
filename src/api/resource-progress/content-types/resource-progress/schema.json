@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_progresses",
+  "info": {
+    "singularName": "resource-progress",
+    "pluralName": "resource-progresses",
+    "displayName": "Resource_progress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topic_progress": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::topic-progress.topic-progress",
+      "inversedBy": "resource_progresses"
+    }
+  }
+}

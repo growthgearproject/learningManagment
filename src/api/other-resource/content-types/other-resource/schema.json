@@ -4,7 +4,8 @@
   "info": {
     "singularName": "other-resource",
     "pluralName": "other-resources",
-    "displayName": "other_resource"
+    "displayName": "custom_resource",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

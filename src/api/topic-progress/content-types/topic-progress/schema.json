@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topic_progresses",
+  "info": {
+    "singularName": "topic-progress",
+    "pluralName": "topic-progresses",
+    "displayName": "topic_progress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "chapter_progress": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter-progress.chapter-progress",
+      "inversedBy": "topic_progresses"
+    },
+    "resource_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-progress.resource-progress",
+      "mappedBy": "topic_progress"
+    }
+  }
+}

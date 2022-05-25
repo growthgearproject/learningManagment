@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapter_progresses",
+  "info": {
+    "singularName": "chapter-progress",
+    "pluralName": "chapter-progresses",
+    "displayName": "chapter_progress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_progress": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course-progress.course-progress",
+      "inversedBy": "chapter_progresses"
+    },
+    "topic_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic-progress.topic-progress",
+      "mappedBy": "chapter_progress"
+    }
+  }
+}

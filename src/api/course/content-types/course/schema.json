@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course",
     "pluralName": "courses",
-    "displayName": "course"
+    "displayName": "course",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -31,21 +32,28 @@
       "default": "Easy"
     },
     "course_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "course_discription": {
       "type": "richtext"
     },
-    "topics": {
+    "chapters": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::topic.topic",
+      "target": "api::chapter.chapter",
       "mappedBy": "course"
+    },
+    "user_enrollment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-enrollment.user-enrollment",
+      "inversedBy": "course"
     }
   }
 }
