@@ -28,6 +28,12 @@
       "relation": "manyToOne",
       "target": "api::resource.resource",
       "inversedBy": "other_resources"
+    },
+    "subresource_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subresource-progress.subresource-progress",
+      "mappedBy": "custom_resource"
     }
   }
 }

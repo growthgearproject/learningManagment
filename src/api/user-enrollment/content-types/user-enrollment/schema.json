@@ -4,7 +4,8 @@
   "info": {
     "singularName": "user-enrollment",
     "pluralName": "user-enrollments",
-    "displayName": "user_enrollment"
+    "displayName": "user_enrollment",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,11 +18,11 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "user_enrollments"
     },
-    "course": {
+    "batch": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::course.course",
-      "inversedBy": "user_enrollment"
+      "relation": "manyToOne",
+      "target": "api::batch.batch",
+      "inversedBy": "user_enrollments"
     },
     "enrollment_date": {
       "type": "datetime",
@@ -36,7 +37,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::course-progress.course-progress",
-      "inversedBy": "user_enrollment"
+      "mappedBy": "user_enrollment"
     }
   }
 }

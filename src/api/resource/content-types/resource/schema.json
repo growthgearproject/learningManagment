@@ -62,6 +62,12 @@
       "relation": "oneToMany",
       "target": "api::other-resource.other-resource",
       "mappedBy": "resource"
+    },
+    "resource_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-progress.resource-progress",
+      "mappedBy": "resource"
     }
   }
 }

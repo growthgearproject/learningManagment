@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "batches",
+  "info": {
+    "singularName": "batch",
+    "pluralName": "batches",
+    "displayName": "batch"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "batch_name": {
+      "type": "string",
+      "required": true
+    },
+    "batch_code": {
+      "type": "uid",
+      "required": true
+    },
+    "batch_discription": {
+      "type": "richtext"
+    },
+    "batch_startdate": {
+      "type": "datetime"
+    },
+    "batch_launch_date": {
+      "type": "datetime"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "batches"
+    },
+    "user_enrollments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-enrollment.user-enrollment",
+      "mappedBy": "batch"
+    },
+    "shedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shedule.shedule",
+      "mappedBy": "batch"
+    }
+  }
+}

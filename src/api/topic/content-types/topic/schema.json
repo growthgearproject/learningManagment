@@ -55,6 +55,12 @@
       "relation": "manyToOne",
       "target": "api::chapter.chapter",
       "inversedBy": "topics"
+    },
+    "topic_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic-progress.topic-progress",
+      "mappedBy": "topic"
     }
   }
 }

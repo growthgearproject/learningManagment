@@ -4,7 +4,8 @@
   "info": {
     "singularName": "topic-progress",
     "pluralName": "topic-progresses",
-    "displayName": "topic_progress"
+    "displayName": "topic_progress",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,17 @@
       "relation": "oneToMany",
       "target": "api::resource-progress.resource-progress",
       "mappedBy": "topic_progress"
+    },
+    "percentage_of_complition": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "topic": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::topic.topic",
+      "inversedBy": "topic_progresses"
     }
   }
 }

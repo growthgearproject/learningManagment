@@ -49,11 +49,17 @@
       "target": "api::chapter.chapter",
       "mappedBy": "course"
     },
-    "user_enrollment": {
+    "batches": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::user-enrollment.user-enrollment",
-      "inversedBy": "course"
+      "relation": "oneToMany",
+      "target": "api::batch.batch",
+      "mappedBy": "course"
+    },
+    "course_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-progress.course-progress",
+      "mappedBy": "course"
     }
   }
 }

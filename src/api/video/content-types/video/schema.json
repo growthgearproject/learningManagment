@@ -33,6 +33,12 @@
       "relation": "manyToOne",
       "target": "api::resource.resource",
       "inversedBy": "videos"
+    },
+    "subresource_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subresource-progress.subresource-progress",
+      "mappedBy": "video"
     }
   }
 }

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subresource_progresses",
+  "info": {
+    "singularName": "subresource-progress",
+    "pluralName": "subresource-progresses",
+    "displayName": "subresource_progress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "resource_progress": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-progress.resource-progress",
+      "inversedBy": "subresource_progresses"
+    },
+    "rich_resource": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rich-resource.rich-resource",
+      "inversedBy": "subresource_progresses"
+    },
+    "custom_resource": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::other-resource.other-resource",
+      "inversedBy": "subresource_progresses"
+    },
+    "video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::video.video",
+      "inversedBy": "subresource_progresses"
+    },
+    "url": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::url.url",
+      "inversedBy": "subresource_progresses"
+    },
+    "submission_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "review": {
+      "type": "text"
+    },
+    "score": {
+      "type": "integer"
+    }
+  }
+}
